@@ -3,6 +3,7 @@ import './App.css';
 import * as API from './service'
 import User from '../components/Users/User'
 import Header from '../components/Header/Header'
+import ErrorMessage from '../components/Error/ErrorMessage';
 class App extends Component {
 
     constructor(props){
@@ -21,11 +22,30 @@ class App extends Component {
       
       
     }).catch(err =>{
-      console.log(err);
+      this.setState=(()=>({
+        error: err 
+      }))
       
-    })
+    });
+  }
+
+  componentDidCatch(err,info){
+    console.log(err);
+    console.log(info)
+
+    this.setState =(()=>({
+      error: err
+    }))
+    
+    
   }
   render() {
+
+    if(this.state.error){
+      return(
+        <ErrorMessage error={this.state.error}/>
+      );
+    }
     
     return (
       

@@ -17,7 +17,7 @@ const User = props =>{
                     <ul className="list-group list-group-flush">
                       <li className="list-group-item"><strong>ID: </strong> {props.user.id}</li>
                       <li className="list-group-item"><strong>Age: </strong>{props.user.age}</li>
-                      <li className="list-group-item"></li>
+                      props          <li className="list-group-item"></li>
                     </ul>
                   </div>
                 </div>         
@@ -25,10 +25,10 @@ const User = props =>{
                   <div className="row">
                     <div className="col-md-2" />
                     <div className="col-md-3">
-                      <button class="btn btn-primary" >Edit</button>
+                      <button className="btn btn-primary" >Edit</button>
                     </div>
                     <div className="col-md-3">
-                      <button class="btn btn-danger" >Delete</button>
+                      <button className="btn btn-danger" >Delete</button>
                     </div>
                   </div>
                 </div>
